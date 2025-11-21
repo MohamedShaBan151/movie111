@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movie111/common/app_constants.dart';
-import 'package:movie111/onboarding/onboarding_screens/onboarding_screen_1.dart';
-import 'package:movie111/providers/avatar_bottom_sheet_provider.dart';
-import 'package:movie111/screens/update_profile_screen.dart';
+import 'package:movie111/UI/auth/providers/switch_provider.dart';
+import 'package:movie111/UI/auth/screens/resetPassword.dart';
+import 'package:movie111/UI/auth/screens/signInScreen.dart';
+import 'package:movie111/UI/auth/screens/signUpScreen.dart';
+import 'package:movie111/UI/main_layer/main_layer_screen.dart';
+import 'package:movie111/UI/main_layer/provider/selected_cat_provider.dart';
+import 'package:movie111/UI/movieDetails/view/movie_details_screen.dart';
+import 'package:movie111/UI/movieDetails/viewModel/favourite_cubit.dart';
+import 'package:movie111/UI/onboarding/onboarding_screens/onboarding_screen_1.dart';
+import 'package:movie111/UI/auth/providers/token_provider.dart';
+import 'package:movie111/core/utils/app_constants.dart';
+import 'package:movie111/core/utils/app_theme.dart';
+import 'package:movie111/generated/l10n.dart';
 import 'package:provider/provider.dart';
-
-import 'common/app_colors.dart';
-import 'common/app_prefs.dart';
-import 'onboarding/onboarding_screens/onboarding_screen_2.dart';
+import 'UI/main_layer/tabs/profileTab/screens/update_profile_screen.dart';
+import 'UI/onboarding/onboarding_screens/onboarding_screen_2.dart';
+import 'core/providers/avatar_bottom_sheet_provider.dart';
+import 'core/utils/app_prefs.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +28,16 @@ Future<void> main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
+          create: (_) => SwitchProvider(),
+        ),
+        ChangeNotifierProvider(
           create: (context) => AvatarBottomSheetProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SelectedCatProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => TokenProvider()..loadToken(),
         ),
       ],
       child: const MyApp(),
@@ -30,37 +50,54 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokenProvider = context.watch<TokenProvider>();
+    if (!tokenProvider.isTokenLoaded) {
+      return const MaterialApp(
+        home: Scaffold(
+          body: Center(child: CircularProgressIndicator()),
+        ),
+      );
+    }
     return ScreenUtilInit(
       designSize: Size(430, 932),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder:
-          (context, child) => MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(
-                seedColor: AppColors.black,
-                brightness: Brightness.light,
-              ),
-              useMaterial3: true,
-              scaffoldBackgroundColor: AppColors.black,
-              dividerTheme: const DividerThemeData(
-                color: AppColors.yellow,
-                thickness: 1,
-              ),
-              appBarTheme: const AppBarTheme(backgroundColor: AppColors.black),
-            ),
-            themeMode: ThemeMode.light,
-            routes: {
-              OnboardingScreen1.routeName: (_) => OnboardingScreen1(),
-              OnboardingScreen2.routeName: (_) => OnboardingScreen2(),
-              UpdateProfileScreen.routeName: (_) => UpdateProfileScreen(),
-            },
-            initialRoute:
-                AppPrefs.onboardingGetBool(AppConstants.onboardingKey) == null
-                    ? OnboardingScreen1.routeName
-                    : UpdateProfileScreen.routeName,
-          ),
+      builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.themeData,
+        themeMode: ThemeMode.light,
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        locale: context.watch<SwitchProvider>().isActive == false
+            ? Locale('en')
+            : Locale('ar'),
+        supportedLocales: S.delegate.supportedLocales,
+        routes: {
+          SignInScreen.routeName: (_) => SignInScreen(),
+          OnboardingScreen1.routeName: (_) => OnboardingScreen1(),
+          OnboardingScreen2.routeName: (_) => OnboardingScreen2(),
+          UpdateProfileScreen.routeName: (_) => UpdateProfileScreen(),
+          MainLayerScreen.routeName: (_) => const MainLayerScreen(),
+          ResetPassword.routeName: (_) => ResetPassword(),
+          SignUpScreen.routeName: (_) => SignUpScreen(),
+          MovieDetailsScreen.routeName: (_) => MovieDetailsScreen(),
+        },
+        initialRoute: getInitialRoute(tokenProvider),
+      ),
     );
+  }
+
+  String getInitialRoute(TokenProvider tokenProvider) {
+    if (AppPrefs.onboardingGetBool(AppConstants.onboardingKey) == null) {
+      return OnboardingScreen1.routeName;
+    } else if (tokenProvider.token != null) {
+      return MainLayerScreen.routeName;
+    } else {
+      return SignInScreen.routeName;
+    }
   }
 }
