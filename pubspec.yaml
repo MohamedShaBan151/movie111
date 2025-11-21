@@ -46,7 +46,10 @@ dependencies:
   carousel_slider: ^5.1.1
   google_sign_in: ^6.1.5
   flutter_switch: ^0.3.2
+<<<<<<< HEAD
   hive_flutter: ^1.1.0
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
 
 dev_dependencies:
   flutter_test:

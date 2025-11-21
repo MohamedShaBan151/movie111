@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+<<<<<<< HEAD
 import 'package:movie111/UI/auth/view/screens/signInScreen.dart';
+=======
+import 'package:movie111/UI/auth/screens/signInScreen.dart';
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
 import 'package:movie111/core/utils/app_constants.dart';
 import 'package:movie111/core/utils/app_prefs.dart';
 
@@ -60,14 +64,22 @@ class Page5 extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
+<<<<<<< HEAD
                     'Start Watching Now',
+=======
+                    'Start Watching Now', //TODO:localization
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     style: CustomTextStyles.style24w700.copyWith(
                       color: AppColors.white,
                     ),
                   ),
                   SizedBox(height: 26.h),
                   CustomElevatedButtonFilled(
+<<<<<<< HEAD
                     buttonText: 'Finish',
+=======
+                    buttonText: 'Finish', //TODO:localization
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     onPressed: () {
                       Navigator.of(
                         context,
@@ -80,7 +92,11 @@ class Page5 extends StatelessWidget {
                   ),
                   SizedBox(height: 16.h),
                   CustomOutlinedButton(
+<<<<<<< HEAD
                     buttonText: 'Back',
+=======
+                    buttonText: 'Back', //TODO:localization
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     onPressed:
                         () => controller.previousPage(
                           duration: Duration(milliseconds: 500),

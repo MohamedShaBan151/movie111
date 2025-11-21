@@ -24,6 +24,10 @@ class CustomElevatedButtonFilled extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+=======
+    Size size = MediaQuery.of(context).size;
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     return ElevatedButton(
       onPressed: () => onPressed(),
       style: ElevatedButton.styleFrom(
@@ -33,6 +37,7 @@ class CustomElevatedButtonFilled extends StatelessWidget {
         backgroundColor: buttonColor ?? AppColors.yellow,
         minimumSize: Size(double.infinity.w, 56.h),
       ),
+<<<<<<< HEAD
       child:
           isSingInPage
               ? Row(
@@ -55,6 +60,29 @@ class CustomElevatedButtonFilled extends StatelessWidget {
                   color: AppColors.black1,
                 ),
               )
+=======
+      child: isSingInPage
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(AppAssets.googleIcon),
+                SizedBox(width: 11.w),
+                Text(
+                  buttonText ?? '',
+                  style: CustomTextStyles.style20w600.copyWith(
+                    color: AppColors.black1,
+                  ),
+                ),
+              ],
+            )
+          : buttonText != null
+              ? Text(
+                  buttonText!,
+                  style: CustomTextStyles.style20w600.copyWith(
+                    color: AppColors.black1,
+                  ),
+                )
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
               : buttonTextWidget,
     );
   }

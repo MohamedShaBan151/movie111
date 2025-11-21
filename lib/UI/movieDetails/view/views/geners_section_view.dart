@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+<<<<<<< HEAD
 import 'package:movie111/UI/main_layer/main_layer_screen.dart';
 import 'package:movie111/UI/main_layer/provider/selected_cat_provider.dart';
 import 'package:movie111/core/extentions/context_extention.dart';
 import 'package:movie111/core/utils/app_colors.dart';
 import 'package:provider/provider.dart';
+=======
+import 'package:movie111/core/utils/app_colors.dart';
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
 
 class GenersSectionView extends StatelessWidget {
   const GenersSectionView({super.key, required this.geners});
@@ -14,11 +18,16 @@ class GenersSectionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+<<<<<<< HEAD
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+=======
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
+<<<<<<< HEAD
             context.getLocalization().geners,
             style: TextStyle(
               fontSize: 24.sp,
@@ -28,11 +37,24 @@ class GenersSectionView extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16.h),
+=======
+            'Geners',
+            style: TextStyle(
+                fontSize: 24.sp,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Roboto',
+                color: AppColors.white),
+          ),
+          SizedBox(
+            height: 16.h,
+          ),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
           GridView.builder(
             padding: EdgeInsets.all(0),
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+<<<<<<< HEAD
               crossAxisCount: 3,
               crossAxisSpacing: 16.w,
               mainAxisSpacing: 10.h,
@@ -73,6 +95,32 @@ class GenersSectionView extends StatelessWidget {
                 ),
             itemCount: geners?.length ?? 0,
           ),
+=======
+                crossAxisCount: 3,
+                crossAxisSpacing: 16.w,
+                mainAxisSpacing: 10.h,
+                childAspectRatio: 3),
+            itemBuilder: (context, index) => Container(
+              height: 40.h,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              decoration: BoxDecoration(
+                color: AppColors.grey,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Center(
+                child: Text(
+                  geners?[index] ?? '',
+                  style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Roboto',
+                      color: AppColors.white),
+                ),
+              ),
+            ),
+            itemCount: geners?.length ?? 0,
+          )
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
         ],
       ),
     );

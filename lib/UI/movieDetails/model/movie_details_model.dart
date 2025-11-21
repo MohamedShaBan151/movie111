@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 import 'package:hive/hive.dart';
 
 part 'movie_details_model.g.dart';
 
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
 class MovieDetailsModel {
   String? status;
   String? statusMessage;
@@ -62,6 +65,7 @@ class Data {
   }
 }
 
+<<<<<<< HEAD
 @HiveType(typeId: 0)
 class MovieDetails extends HiveObject {
   @HiveField(0)
@@ -158,6 +162,40 @@ class MovieDetails extends HiveObject {
   String? dateUploaded;
 
   @HiveField(31)
+=======
+class MovieDetails {
+  int? id;
+  String? url;
+  String? imdbCode;
+  String? title;
+  String? titleEnglish;
+  String? titleLong;
+  String? slug;
+  int? year;
+  double? rating;
+  int? runtime;
+  List<String>? genres;
+  int? likeCount;
+  String? descriptionIntro;
+  String? descriptionFull;
+  String? ytTrailerCode;
+  String? language;
+  String? mpaRating;
+  String? backgroundImage;
+  String? backgroundImageOriginal;
+  String? smallCoverImage;
+  String? mediumCoverImage;
+  String? largeCoverImage;
+  String? mediumScreenshotImage1;
+  String? mediumScreenshotImage2;
+  String? mediumScreenshotImage3;
+  String? largeScreenshotImage1;
+  String? largeScreenshotImage2;
+  String? largeScreenshotImage3;
+  List<Cast>? cast;
+  List<Torrents>? torrents;
+  String? dateUploaded;
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   int? dateUploadedUnix;
 
   MovieDetails(
@@ -346,6 +384,7 @@ class MovieDetails extends HiveObject {
     _data["date_uploaded_unix"] = dateUploadedUnix;
     return _data;
   }
+<<<<<<< HEAD
 
   @override
   bool operator ==(Object other) {
@@ -386,6 +425,24 @@ class Torrents {
   @HiveField(12)
   String? dateUploaded;
   @HiveField(13)
+=======
+}
+
+class Torrents {
+  String? url;
+  String? hash;
+  String? quality;
+  String? type;
+  String? isRepack;
+  String? videoCodec;
+  String? bitDepth;
+  String? audioChannels;
+  int? seeds;
+  int? peers;
+  String? size;
+  int? sizeBytes;
+  String? dateUploaded;
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   int? dateUploadedUnix;
 
   Torrents(
@@ -473,6 +530,7 @@ class Torrents {
   }
 }
 
+<<<<<<< HEAD
 @HiveType(typeId: 1)
 class Cast {
   @HiveField(0)
@@ -482,6 +540,12 @@ class Cast {
   @HiveField(2)
   String? urlSmallImage;
   @HiveField(3)
+=======
+class Cast {
+  String? name;
+  String? characterName;
+  String? urlSmallImage;
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   String? imdbCode;
 
   Cast({this.name, this.characterName, this.urlSmallImage, this.imdbCode});

@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟ ",
     ),
+<<<<<<< HEAD
     "areYouSureYouWantToExit": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد أنك تريد الخروج؟",
     ),
@@ -32,6 +33,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "cast": MessageLookupByLibrary.simpleMessage("الممثلين"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "character": MessageLookupByLibrary.simpleMessage("الشخصية:"),
+=======
+    "avatar": MessageLookupByLibrary.simpleMessage("الصورة الرمزية"),
+    "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "confirmPasswordHint": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
@@ -52,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "exit": MessageLookupByLibrary.simpleMessage("خروج"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+<<<<<<< HEAD
     "geners": MessageLookupByLibrary.simpleMessage("النوع"),
     "genreAction": MessageLookupByLibrary.simpleMessage("أكشن"),
     "genreAdventure": MessageLookupByLibrary.simpleMessage("مغامرة"),
@@ -80,6 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "genreThriller": MessageLookupByLibrary.simpleMessage("إثارة"),
     "genreWar": MessageLookupByLibrary.simpleMessage("حرب"),
     "genreWestern": MessageLookupByLibrary.simpleMessage("ويسترن"),
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "googleCancelled": MessageLookupByLibrary.simpleMessage(
       "تم إلغاء تسجيل الدخول عبر جوجل",
     ),
@@ -94,13 +102,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول بواسطة جوجل",
     ),
+<<<<<<< HEAD
     "name": MessageLookupByLibrary.simpleMessage("الاسم:"),
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "nameHint": MessageLookupByLibrary.simpleMessage("الاسم"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
     "newPasswordHint": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الجديدة",
     ),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
+<<<<<<< HEAD
     "nocast": MessageLookupByLibrary.simpleMessage("لا يوجد ممثلين متاحين"),
     "nocharacter": MessageLookupByLibrary.simpleMessage("لا توجد شخصية متاحة"),
     "nomovies": MessageLookupByLibrary.simpleMessage("لا توجد أفلام!"),
@@ -108,6 +120,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "nosummary": MessageLookupByLibrary.simpleMessage(
       "لا يوجد ملخص متاح لهذا الفيلم!",
     ),
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "oldPasswordHint": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور القديمة",
     ),
@@ -122,9 +136,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور مطلوبة",
     ),
+<<<<<<< HEAD
     "passwordShouldNotMatch": MessageLookupByLibrary.simpleMessage(
       "لا يجب ان تكون كلمه المرور نفس القديمه ",
     ),
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "passwordSpecial": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور يجب أن تحتوي على رمز خاص واحد على الأقل",
     ),
@@ -165,6 +182,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resetPassword": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
     ),
+<<<<<<< HEAD
     "screenshots": MessageLookupByLibrary.simpleMessage("لقطات الشاشة"),
     "search": MessageLookupByLibrary.simpleMessage("ابحث"),
     "seeMore": MessageLookupByLibrary.simpleMessage("عرض المزيد"),
@@ -179,5 +197,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "youAreGoingToWatchTheMovie": MessageLookupByLibrary.simpleMessage(
       "أنت ذاهب لمشاهدة الفيلم",
     ),
+=======
+    "search": MessageLookupByLibrary.simpleMessage("ابحث"),
+    "updateData": MessageLookupByLibrary.simpleMessage("تحديث البيانات"),
+    "userName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+    "watchList": MessageLookupByLibrary.simpleMessage("قائمة المشاهدة"),
+    "wishList": MessageLookupByLibrary.simpleMessage("قائمة الرغبات"),
+    "yes": MessageLookupByLibrary.simpleMessage("نعم"),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   };
 }

@@ -9,7 +9,14 @@ class AppTheme {
     ),
     useMaterial3: true,
     scaffoldBackgroundColor: AppColors.black1,
+<<<<<<< HEAD
     dividerTheme: const DividerThemeData(color: AppColors.yellow, thickness: 1),
+=======
+    dividerTheme: const DividerThemeData(
+      color: AppColors.yellow,
+      thickness: 1,
+    ),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.black1,
       foregroundColor: AppColors.yellow,

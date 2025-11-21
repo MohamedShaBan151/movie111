@@ -48,13 +48,21 @@ class _AvailableNowSectionState extends State<AvailableNowSection> {
           child: Column(
             children: [
               SizedBox(height: 100.h),
+<<<<<<< HEAD
               SizedBox(height: 10.h),
+=======
+              const SizedBox(height: 10),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
               CarouselSlider.builder(
                 itemCount: widget.movies.length,
                 itemBuilder: (context, index, realIdx) {
                   final movie = widget.movies[index];
                   return MovieCard(
+<<<<<<< HEAD
                     movieId: movie.imdbCode,
+=======
+                    movie: movie,
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     imagePath: movie.largeCoverImage ?? '',
                     rating: movie.rating,
                   );
@@ -73,7 +81,11 @@ class _AvailableNowSectionState extends State<AvailableNowSection> {
                   },
                 ),
               ),
+<<<<<<< HEAD
               SizedBox(height: 10.h),
+=======
+              const SizedBox(height: 10),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
               const WatchNowBanner(),
             ],
           ),

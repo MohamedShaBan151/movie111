@@ -34,12 +34,20 @@
   "registrationSuccess": "Registration Successful",
   "registrationFailed": "Registration failed",
   "googleCancelled": "Google Sign-In Cancelled",
+<<<<<<< HEAD
   "resetPassword": "Reset Password",
+=======
+   "resetPassword": "Reset Password",
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   "oldPasswordHint": "Old Password",
   "newPasswordHint": "New Password",
   "changePassword": "Change Password",
   "search": "search",
   "pickAvatar": "Pick Avatar",
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   "deleteAccount": "Delete Account",
   "deleteAccountMessage": "Are you sure you want to delete the account?",
   "no": "No",
@@ -53,6 +61,7 @@
   "editProfile": "Edit Profile",
   "exit": "Exit",
   "watchList": "Watch List",
+<<<<<<< HEAD
   "userName": "User Name",
   "genreAction": "Action",
   "genreAdventure": "Adventure",
@@ -99,3 +108,7 @@
   "areYouSureYouWantToExit": "Are you sure you want to exit?",
   "passwordShouldNotMatch": "Password Should Not Match Old Password"
 }
+=======
+  "userName": "User Name"
+}
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457

@@ -6,6 +6,7 @@ class SelectedCatProvider extends ChangeNotifier {
   final ScrollController scrollController = ScrollController();
 
   final double itemWidth = 100;
+<<<<<<< HEAD
   Map<String, String> arabicToEnglishGenre = {
     'أكشن': 'Action',
     'مغامرة': 'Adventure',
@@ -39,6 +40,12 @@ class SelectedCatProvider extends ChangeNotifier {
   void selectCat(String cat) {
     cat = arabicToEnglishGenre[cat] ?? cat;
 
+=======
+
+  void selectCat(
+    String cat,
+  ) {
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     selectedCat = AppConstants.genresList.indexWhere((e) => e == cat);
     notifyListeners();
     Future.delayed(Duration(milliseconds: 100), () {

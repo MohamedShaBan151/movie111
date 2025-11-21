@@ -29,11 +29,19 @@
   "phoneStartWithPlus": "يجب أن يبدأ رقم الهاتف بعلامة +",
   "phoneExactLength": "رقم الهاتف يجب أن يحتوي على 13 رقمًا بالضبط",
   "phoneOnlyDigits": "رقم الهاتف يجب أن يحتوي على أرقام فقط بعد +",
+<<<<<<< HEAD
   "loginSuccess": "تم تسجيل الدخول بنجاح",
   "registrationSuccess": "تم إنشاء الحساب بنجاح",
   "registrationFailed": "فشل في إنشاء الحساب",
   "googleCancelled": "تم إلغاء تسجيل الدخول عبر جوجل",
   "resetPassword": "إعادة تعيين كلمة المرور",
+=======
+   "loginSuccess": "تم تسجيل الدخول بنجاح",
+  "registrationSuccess": "تم إنشاء الحساب بنجاح",
+  "registrationFailed": "فشل في إنشاء الحساب",
+  "googleCancelled": "تم إلغاء تسجيل الدخول عبر جوجل",
+   "resetPassword": "إعادة تعيين كلمة المرور",
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   "oldPasswordHint": "كلمة المرور القديمة",
   "newPasswordHint": "كلمة المرور الجديدة",
   "passwordMinLength": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
@@ -53,6 +61,7 @@
   "editProfile": "تعديل الملف الشخصي",
   "exit": "خروج",
   "watchList": "قائمة المشاهدة",
+<<<<<<< HEAD
   "userName": "اسم المستخدم",
   "genreAction": "أكشن",
   "genreAdventure": "مغامرة",
@@ -99,3 +108,8 @@
   "areYouSureYouWantToExit": "هل أنت متأكد أنك تريد الخروج؟",
   "passwordShouldNotMatch":"لا يجب ان تكون كلمه المرور نفس القديمه "
 }
+=======
+  "userName": "اسم المستخدم"
+
+}
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457

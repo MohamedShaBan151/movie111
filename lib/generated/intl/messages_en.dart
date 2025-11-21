@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already Have Account ? ",
     ),
+<<<<<<< HEAD
     "areYouSureYouWantToExit": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to exit?",
     ),
@@ -32,6 +33,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "cast": MessageLookupByLibrary.simpleMessage("Cast"),
     "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
     "character": MessageLookupByLibrary.simpleMessage("Character:"),
+=======
+    "avatar": MessageLookupByLibrary.simpleMessage("Avatar"),
+    "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "confirmPasswordHint": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
@@ -52,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailRequired": MessageLookupByLibrary.simpleMessage("Email is required"),
     "exit": MessageLookupByLibrary.simpleMessage("Exit"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forget Password ?"),
+<<<<<<< HEAD
     "geners": MessageLookupByLibrary.simpleMessage("Genres"),
     "genreAction": MessageLookupByLibrary.simpleMessage("Action"),
     "genreAdventure": MessageLookupByLibrary.simpleMessage("Adventure"),
@@ -80,6 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "genreThriller": MessageLookupByLibrary.simpleMessage("Thriller"),
     "genreWar": MessageLookupByLibrary.simpleMessage("War"),
     "genreWestern": MessageLookupByLibrary.simpleMessage("Western"),
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "googleCancelled": MessageLookupByLibrary.simpleMessage(
       "Google Sign-In Cancelled",
     ),
@@ -90,11 +98,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Login With Google",
     ),
+<<<<<<< HEAD
     "name": MessageLookupByLibrary.simpleMessage("Name:"),
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "nameHint": MessageLookupByLibrary.simpleMessage("Name"),
     "nameRequired": MessageLookupByLibrary.simpleMessage("Name is required"),
     "newPasswordHint": MessageLookupByLibrary.simpleMessage("New Password"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+<<<<<<< HEAD
     "nocast": MessageLookupByLibrary.simpleMessage("No Cast Available"),
     "nocharacter": MessageLookupByLibrary.simpleMessage(
       "No Character Available",
@@ -104,6 +116,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "nosummary": MessageLookupByLibrary.simpleMessage(
       "No Summary Available For This Movie!",
     ),
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "oldPasswordHint": MessageLookupByLibrary.simpleMessage("Old Password"),
     "or": MessageLookupByLibrary.simpleMessage("Or"),
     "passwordHint": MessageLookupByLibrary.simpleMessage("Password"),
@@ -116,9 +130,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordRequired": MessageLookupByLibrary.simpleMessage(
       "Password is required",
     ),
+<<<<<<< HEAD
     "passwordShouldNotMatch": MessageLookupByLibrary.simpleMessage(
       "Password Should Not Match Old Password",
     ),
+=======
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     "passwordSpecial": MessageLookupByLibrary.simpleMessage(
       "Password must contain at least one special character",
     ),
@@ -159,6 +176,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Registration Successful",
     ),
     "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
+<<<<<<< HEAD
     "screenshots": MessageLookupByLibrary.simpleMessage("Screenshots"),
     "search": MessageLookupByLibrary.simpleMessage("search"),
     "seeMore": MessageLookupByLibrary.simpleMessage("See More"),
@@ -173,5 +191,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "youAreGoingToWatchTheMovie": MessageLookupByLibrary.simpleMessage(
       "You Are Going To Watch The Movie",
     ),
+=======
+    "search": MessageLookupByLibrary.simpleMessage("search"),
+    "updateData": MessageLookupByLibrary.simpleMessage("Update Data"),
+    "userName": MessageLookupByLibrary.simpleMessage("User Name"),
+    "watchList": MessageLookupByLibrary.simpleMessage("Watch List"),
+    "wishList": MessageLookupByLibrary.simpleMessage("Wish List"),
+    "yes": MessageLookupByLibrary.simpleMessage("Yes"),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   };
 }

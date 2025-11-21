@@ -6,11 +6,16 @@ import 'package:movie111/core/utils/app_endpoints.dart';
 
 class MoviesListApi {
   static Future<List<Movies>?> getListMoviesByDate() async {
+<<<<<<< HEAD
     Uri uri = Uri.https(
       AppConstants.moviesBaseUrl,
       AppEndpoints.listMoviesEndpoint,
       {'sort_by': 'date_added'},
     );
+=======
+    Uri uri = Uri.https(AppConstants.moviesBaseUrl,
+        AppEndpoints.listMoviesEndpoint, {'sort_by': 'date_added'});
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     var response = await http.get(uri);
     var jsonResponse = jsonDecode(response.body);
     MoviesListResponse data = MoviesListResponse.fromJson(jsonResponse);
@@ -22,11 +27,20 @@ class MoviesListApi {
   }
 
   static Future<List<Movies>?> getListMoviesByGener(String gener) async {
+<<<<<<< HEAD
     Uri uri = Uri.https(
       AppConstants.moviesBaseUrl,
       AppEndpoints.listMoviesEndpoint,
       {'genre': gener, 'limit': '3', 'sort_by': 'date_added'},
     );
+=======
+    Uri uri =
+        Uri.https(AppConstants.moviesBaseUrl, AppEndpoints.listMoviesEndpoint, {
+      'genre': gener,
+      'limit': '3',
+      'sort_by': 'date_added',
+    });
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     var response = await http.get(uri);
     var jsonResponse = jsonDecode(response.body);
     MoviesListResponse data = MoviesListResponse.fromJson(jsonResponse);
@@ -37,11 +51,22 @@ class MoviesListApi {
     }
   }
 
+<<<<<<< HEAD
   static Future<List<Movies>?> getMoviesByQuery(String query, int page) async {
     Uri uri = Uri.https(
       AppConstants.moviesBaseUrl,
       AppEndpoints.listMoviesEndpoint,
       {'query_term': query, 'sort_by': 'date_added', 'page': page.toString()},
+=======
+  static Future<List<Movies>?> getMoviesByQuery(String query) async {
+    Uri uri = Uri.https(
+      AppConstants.moviesBaseUrl,
+      AppEndpoints.listMoviesEndpoint,
+      {
+        'query_term': query,
+        'sort_by': 'date_added',
+      },
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     );
 
     final response = await http.get(uri);

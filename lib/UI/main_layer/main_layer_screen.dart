@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie111/UI/main_layer/provider/selected_cat_provider.dart';
 import 'package:movie111/UI/main_layer/tabs/exploreTab/view/explore_tab_screen.dart';
@@ -8,6 +9,17 @@ import 'package:movie111/UI/main_layer/tabs/searchTab/view/search_tab_screen.dar
 import 'package:movie111/UI/main_layer/tabs/searchTab/view_model/search_movies_cubit.dart';
 import 'package:movie111/core/utils/app_assets.dart';
 import 'package:movie111/core/utils/app_colors.dart';
+=======
+import 'package:movie111/UI/main_layer/provider/selected_cat_provider.dart';
+import 'package:movie111/UI/main_layer/tabs/exploreTab/explore_tab_screen.dart';
+import 'package:movie111/UI/main_layer/tabs/homeTab/view/home_tab_screen.dart';
+import 'package:movie111/UI/main_layer/tabs/profileTab/profile_tab_screen.dart';
+import 'package:movie111/UI/main_layer/tabs/profileTab/provider/watch_list_and_history_provider.dart';
+import 'package:movie111/UI/main_layer/tabs/searchTab/search_tab_screen.dart';
+import 'package:movie111/core/utils/app_assets.dart';
+import 'package:movie111/core/utils/app_colors.dart';
+import 'package:provider/provider.dart';
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
 
 final ValueNotifier<int> currentIndex = ValueNotifier<int>(0);
 
@@ -23,18 +35,27 @@ class MainLayerScreen extends StatefulWidget {
 class _MainLayerScreenState extends State<MainLayerScreen> {
   List<Widget> tabs = [
     const HomeTabScreen(),
+<<<<<<< HEAD
     BlocProvider(
       create: (context) => SearchMoviesCubit(),
       child: const SearchTabScreen(),
     ),
     const ExploreTabScreen(),
     const ProfileTabScreen(),
+=======
+    const SearchTabScreen(),
+    const ExploreTabScreen(),
+    ChangeNotifierProvider(
+        create: (context) => WatchListAndHistoryProvider(),
+        child: const ProfileTabScreen()),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   ];
 
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: currentIndex,
+<<<<<<< HEAD
       builder:
           (context, value, _) => Scaffold(
             extendBody: true,
@@ -77,6 +98,48 @@ class _MainLayerScreenState extends State<MainLayerScreen> {
             ),
             body: tabs[value],
           ),
+=======
+      builder: (context, value, _) => Scaffold(
+          extendBody: true,
+          bottomNavigationBar: Container(
+            margin: const EdgeInsets.all(8.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: AppColors.grey,
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: BottomNavigationBar(
+                onTap: (value) {
+                  setState(() {
+                    currentIndex.value = value;
+                    context.read<SelectedCatProvider>().unSelectCat();
+                  });
+                },
+                currentIndex: value,
+                items: [
+                  BottomNavigationBarItem(
+                    icon: ImageIcon(AssetImage(AppAssets.homeIcon)),
+                    label: 'Home',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: ImageIcon(AssetImage(AppAssets.searchIcon)),
+                    label: 'Search',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: ImageIcon(AssetImage(AppAssets.exploreIcon)),
+                    label: 'Explore',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: ImageIcon(AssetImage(AppAssets.profileIcon)),
+                    label: 'Profile',
+                  ),
+                ],
+              ),
+            ),
+          ),
+          body: tabs[value]),
+>>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     );
   }
 }
