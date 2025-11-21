@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.7.2
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -34,10 +34,19 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  # splash: ^1.2.0
-  flutter_native_splash: ^2.4.7
-  flutter_svg: ^2.2.0
-  svg_image: ^0.0.5
+  flutter_native_splash: ^2.4.6
+  flutter_screenutil: ^5.9.3
+  shared_preferences: ^2.5.3
+  provider: ^6.1.5+1
+  svg_flutter: ^0.0.1
+  flutter_svg: ^2.2.2
+  flutter_bloc: ^9.1.1
+  flutter_localizations:
+    sdk: flutter
+  carousel_slider: ^5.1.1
+  google_sign_in: ^6.1.5
+  flutter_switch: ^0.3.2
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +84,9 @@ flutter:
     - assets/icons/movie_details_icon/
     - assets/images/profile_tab_images/
     - assets/images/search_tap/
+    
+
+  #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -87,12 +99,27 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+     - family: Roboto
+       fonts:
+         - asset: assets/fonts/roboto_font/Roboto-Black.ttf
+           weight: 500
+         - asset: assets/fonts/roboto_font/Roboto-Bold.ttf
+           weight: 700
+         - asset: assets/fonts/roboto_font/Roboto-ExtraBold.ttf
+           weight: 900
+         - asset: assets/fonts/roboto_font/Roboto-ExtraLight.ttf
+           weight: 200
+         - asset: assets/fonts/roboto_font/Roboto-Light.ttf
+           weight: 300
+         - asset: assets/fonts/roboto_font/Roboto-Medium.ttf
+           weight: 500
+         - asset: assets/fonts/roboto_font/Roboto-Regular.ttf
+           weight: 400
+         - asset: assets/fonts/roboto_font/Roboto-SemiBold.ttf
+           weight: 600
+         - asset: assets/fonts/roboto_font/Roboto-Thin.ttf
+           weight: 100
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
