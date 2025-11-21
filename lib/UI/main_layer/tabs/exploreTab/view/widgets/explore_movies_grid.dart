@@ -27,8 +27,9 @@ class ExploreMoviesGrid extends StatelessWidget {
             return Center(child: Text(state.message));
           } else if (state is ExploreMoviesLoaded ||
               state is GetMoreMoviesLoadingState) {
-            final List<Movies> movies =
-                context.watch<ExploreMoviesCubit>().movies;
+            final List<Movies> movies = context
+                .watch<ExploreMoviesCubit>()
+                .movies;
             return GridView.builder(
               controller: context.watch<ExploreMoviesCubit>().scrollController,
               itemCount:

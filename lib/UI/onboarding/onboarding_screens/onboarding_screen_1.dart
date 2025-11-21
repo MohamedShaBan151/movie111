@@ -44,10 +44,6 @@ class OnboardingScreen1 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-<<<<<<< HEAD
-=======
-                  //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                   'Find Your Next\nFavorite Movie Here',
                   style: CustomTextStyles.style36w500.copyWith(
                     color: AppColors.white,
@@ -58,10 +54,6 @@ class OnboardingScreen1 extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(top: 16.r, bottom: 24.r),
                   child: Text(
-<<<<<<< HEAD
-=======
-                    //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     'Get access to a huge library of movies\nto suit all tastes. You will surely like it.',
                     style: CustomTextStyles.style20w400.copyWith(
                       color: AppColors.white.withValues(alpha: 0.6.r),
@@ -70,18 +62,10 @@ class OnboardingScreen1 extends StatelessWidget {
                   ),
                 ),
                 CustomElevatedButtonFilled(
-<<<<<<< HEAD
                   buttonText: 'Explore Now',
-                  onPressed:
-                      () => Navigator.of(
-                        context,
-                      ).pushReplacementNamed(OnboardingScreen2.routeName),
-=======
-                  buttonText: 'Explore Now', //TODO:localization
                   onPressed: () => Navigator.of(
                     context,
                   ).pushReplacementNamed(OnboardingScreen2.routeName),
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                 ),
               ],
             ),

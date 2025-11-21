@@ -118,10 +118,9 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen>
                                   ),
                               itemBuilder: (context, index) {
                                 return AvatarBottomSheetIcon(
-                                  avatarImage:
-                                      AvatarBottomSheetModel
-                                          .avatarImages[index]
-                                          .avatarImage,
+                                  avatarImage: AvatarBottomSheetModel
+                                      .avatarImages[index]
+                                      .avatarImage,
                                   index: index,
                                 );
                               },
@@ -160,10 +159,9 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen>
               ),
             ),
             Align(
-              alignment:
-                  context.watch<SwitchProvider>().isActive
-                      ? Alignment.centerRight
-                      : Alignment.centerLeft,
+              alignment: context.watch<SwitchProvider>().isActive
+                  ? Alignment.centerRight
+                  : Alignment.centerLeft,
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).pushNamed(ResetPassword.routeName);
@@ -185,91 +183,86 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen>
                   showDialog(
                     context: context,
                     useSafeArea: true,
-                    builder:
-                        (context) => AlertDialog(
-                          title: Text(
-                            context.getLocalization().deleteAccount,
-                            style: CustomTextStyles.style36w500.copyWith(
-                              color: AppColors.red,
+                    builder: (context) => AlertDialog(
+                      title: Text(
+                        context.getLocalization().deleteAccount,
+                        style: CustomTextStyles.style36w500.copyWith(
+                          color: AppColors.red,
+                        ),
+                      ),
+                      backgroundColor: AppColors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      alignment: Alignment.center,
+                      actionsAlignment: MainAxisAlignment.center,
+                      content: Text(
+                        context.getLocalization().deleteAccountMessage,
+                        style: CustomTextStyles.style20w600.copyWith(
+                          color: AppColors.black1,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      icon: Icon(Icons.delete, color: AppColors.red),
+                      actions: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.yellow,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                              ),
+                              child: Text(
+                                context.getLocalization().no,
+                                style: CustomTextStyles.style20w600.copyWith(
+                                  color: AppColors.black1,
+                                ),
+                              ),
                             ),
-                          ),
-                          backgroundColor: AppColors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          alignment: Alignment.center,
-                          actionsAlignment: MainAxisAlignment.center,
-                          content: Text(
-                            context.getLocalization().deleteAccountMessage,
-                            style: CustomTextStyles.style20w600.copyWith(
-                              color: AppColors.black1,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          icon: Icon(Icons.delete, color: AppColors.red),
-                          actions: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  style: ElevatedButton.styleFrom(
+                            SizedBox(width: 20.w),
+                            ElevatedButton(
+                              onPressed: () async {
+                                await ProfileApi.deleteProfile(context);
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      context.getLocalization().profileDeleted,
+                                      style: CustomTextStyles.style20w600
+                                          .copyWith(color: AppColors.black1),
+                                    ),
                                     backgroundColor: AppColors.yellow,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
                                   ),
-                                  child: Text(
-                                    context.getLocalization().no,
-                                    style: CustomTextStyles.style20w600
-                                        .copyWith(color: AppColors.black1),
-                                  ),
-                                ),
-                                SizedBox(width: 20.w),
-                                ElevatedButton(
-                                  onPressed: () async {
-                                    await ProfileApi.deleteProfile(context);
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          context
-                                              .getLocalization()
-                                              .profileDeleted,
-                                          style: CustomTextStyles.style20w600
-                                              .copyWith(
-                                                color: AppColors.black1,
-                                              ),
-                                        ),
-                                        backgroundColor: AppColors.yellow,
-                                      ),
-                                    );
+                                );
 
-                                    Navigator.of(
-                                      context,
-                                    ).pushNamedAndRemoveUntil(
-                                      SignInScreen.routeName,
-                                      (route) => false,
-                                    );
-                                    currentIndex.value = 0;
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: AppColors.red,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    context.getLocalization().yes,
-                                    style: CustomTextStyles.style20w600
-                                        .copyWith(color: AppColors.white),
-                                  ),
+                                Navigator.of(context).pushNamedAndRemoveUntil(
+                                  SignInScreen.routeName,
+                                  (route) => false,
+                                );
+                                currentIndex.value = 0;
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.red,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                              ],
+                              ),
+                              child: Text(
+                                context.getLocalization().yes,
+                                style: CustomTextStyles.style20w600.copyWith(
+                                  color: AppColors.white,
+                                ),
+                              ),
                             ),
                           ],
                         ),
+                      ],
+                    ),
                   );
                 },
                 buttonColor: AppColors.red,

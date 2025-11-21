@@ -28,16 +28,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-<<<<<<< HEAD
     final name = (locale.countryCode?.isEmpty ?? false)
         ? locale.languageCode
         : locale.toString();
-=======
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -495,7 +488,6 @@ class S {
   String get userName {
     return Intl.message('User Name', name: 'userName', desc: '', args: []);
   }
-<<<<<<< HEAD
 
   /// `Action`
   String get genreAction {
@@ -776,8 +768,6 @@ class S {
       args: [],
     );
   }
-=======
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

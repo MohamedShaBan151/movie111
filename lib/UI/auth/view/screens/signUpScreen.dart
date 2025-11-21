@@ -100,11 +100,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   password: false,
                   prefixIconPath: AppAssets.idIcon,
                   controller: nameController,
-                  validator:
-                      (value) =>
-                          value == null || value.isEmpty
-                              ? context.getLocalization().nameRequired
-                              : null,
+                  validator: (value) => value == null || value.isEmpty
+                      ? context.getLocalization().nameRequired
+                      : null,
                 ),
                 CustomTextFormFieldAuth(
                   hintText: context.getLocalization().emailHint,
@@ -191,12 +189,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       showDialog(
                         context: context,
                         barrierDismissible: false,
-                        builder:
-                            (_) => Center(
-                              child: CircularProgressIndicator(
-                                color: AppColors.yellow,
-                              ),
-                            ),
+                        builder: (_) => Center(
+                          child: CircularProgressIndicator(
+                            color: AppColors.yellow,
+                          ),
+                        ),
                       );
                     } else {
                       Navigator.pop(context);
@@ -263,9 +260,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             fontWeight: FontWeight.bold,
                           ),
                           text: context.getLocalization().login,
-                          recognizer:
-                              TapGestureRecognizer()
-                                ..onTap = () => Navigator.of(context).pop(),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () => Navigator.of(context).pop(),
                         ),
                       ],
                     ),

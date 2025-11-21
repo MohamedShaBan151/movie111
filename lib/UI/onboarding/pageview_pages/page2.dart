@@ -57,11 +57,7 @@ class Page2 extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-<<<<<<< HEAD
                     'Explore All Genres',
-=======
-                    'Explore All Genres', //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     style: CustomTextStyles.style24w700.copyWith(
                       color: AppColors.white,
                     ),
@@ -69,10 +65,6 @@ class Page2 extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 8.r, bottom: 16.r),
                     child: Text(
-<<<<<<< HEAD
-=======
-                      //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                       'Discover movies from every genre, in all\navailable qualities. Find something new\nand exciting to watch every day.',
                       style: CustomTextStyles.style20w400.copyWith(
                         color: AppColors.white,
@@ -81,29 +73,19 @@ class Page2 extends StatelessWidget {
                     ),
                   ),
                   CustomElevatedButtonFilled(
-<<<<<<< HEAD
                     buttonText: 'Next',
-=======
-                    buttonText: 'Next', //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
-                    onPressed:
-                        () => controller.nextPage(
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeInOut,
-                        ),
+                    onPressed: () => controller.nextPage(
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.easeInOut,
+                    ),
                   ),
                   SizedBox(height: 16.h),
                   CustomOutlinedButton(
-<<<<<<< HEAD
                     buttonText: 'Back',
-=======
-                    buttonText: 'Back', //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
-                    onPressed:
-                        () => controller.previousPage(
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeInOut,
-                        ),
+                    onPressed: () => controller.previousPage(
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.easeInOut,
+                    ),
                   ),
                 ],
               ),

@@ -112,12 +112,11 @@ class _SignInScreenState extends State<SignInScreen> {
                             showDialog(
                               context: context,
                               barrierDismissible: false,
-                              builder:
-                                  (_) => Center(
-                                    child: CircularProgressIndicator(
-                                      color: AppColors.yellow,
-                                    ),
-                                  ),
+                              builder: (_) => Center(
+                                child: CircularProgressIndicator(
+                                  color: AppColors.yellow,
+                                ),
+                              ),
                             );
                           } else {
                             Navigator.pop(context);
@@ -181,13 +180,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                 fontWeight: FontWeight.bold,
                               ),
                               text: context.getLocalization().createOne,
-                              recognizer:
-                                  TapGestureRecognizer()
-                                    ..onTap =
-                                        () => Navigator.pushNamed(
-                                          context,
-                                          SignUpScreen.routeName,
-                                        ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () => Navigator.pushNamed(
+                                  context,
+                                  SignUpScreen.routeName,
+                                ),
                             ),
                           ],
                         ),
