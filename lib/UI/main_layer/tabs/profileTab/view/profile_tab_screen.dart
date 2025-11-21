@@ -68,49 +68,45 @@ class _ProfileTabScreenState extends State<ProfileTabScreen>
     final hasData = provider.profileData != null;
 
     return Scaffold(
-      body:
-          provider.loading
-              ? Center(
-                child: CircularProgressIndicator(color: AppColors.yellow),
-              )
-              : provider.errorMessage != null
-              ? Center(
-                child: Text(
-                  provider.errorMessage!,
-                  style: CustomTextStyles.style20w600.copyWith(
-                    color: AppColors.yellow,
-                  ),
-                ),
-              )
-              : !hasData
-              ? Center(
-                child: Text(
-                  "No profile data available",
-                  style: CustomTextStyles.style20w600.copyWith(
-                    color: AppColors.yellow,
-                  ),
-                ),
-              )
-              : NestedScrollView(
-                headerSliverBuilder:
-                    (context, innerBoxIsScrolled) => [
-                      SliverToBoxAdapter(
-                        child: ProfileTabHeader(
-                          controller: controller,
-                          profileData: provider.profileData!,
-                        ),
-                      ),
-                      SliverPersistentHeader(
-                        delegate: _TabBarDelegate(controller),
-                        pinned: true,
-                      ),
-                    ],
-                body: ProfileTabBody(
-                  controller: controller,
-                  allWatchedMovies: provider.watchedMovies ?? [],
-                  favouriteMovies: provider.favouriteMovies ?? [],
+      body: provider.loading
+          ? Center(child: CircularProgressIndicator(color: AppColors.yellow))
+          : provider.errorMessage != null
+          ? Center(
+              child: Text(
+                provider.errorMessage!,
+                style: CustomTextStyles.style20w600.copyWith(
+                  color: AppColors.yellow,
                 ),
               ),
+            )
+          : !hasData
+          ? Center(
+              child: Text(
+                "No profile data available",
+                style: CustomTextStyles.style20w600.copyWith(
+                  color: AppColors.yellow,
+                ),
+              ),
+            )
+          : NestedScrollView(
+              headerSliverBuilder: (context, innerBoxIsScrolled) => [
+                SliverToBoxAdapter(
+                  child: ProfileTabHeader(
+                    controller: controller,
+                    profileData: provider.profileData!,
+                  ),
+                ),
+                SliverPersistentHeader(
+                  delegate: _TabBarDelegate(controller),
+                  pinned: true,
+                ),
+              ],
+              body: ProfileTabBody(
+                controller: controller,
+                allWatchedMovies: provider.watchedMovies ?? [],
+                favouriteMovies: provider.favouriteMovies ?? [],
+              ),
+            ),
     );
   }
 }
@@ -136,8 +132,9 @@ class _TabBarDelegate extends SliverPersistentHeaderDelegate {
     bool overlapsContent,
   ) {
     // حماية من القيم الصفرية
-    final double offset =
-        shrinkOffset.clamp(0.0, maxExtent - minExtent).toDouble();
+    final double offset = shrinkOffset
+        .clamp(0.0, maxExtent - minExtent)
+        .toDouble();
     final double visibleHeight = (maxExtent - offset).clamp(
       minExtent,
       double.infinity,
@@ -149,16 +146,15 @@ class _TabBarDelegate extends SliverPersistentHeaderDelegate {
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.black2,
-          boxShadow:
-              isPinned
-                  ? [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      offset: const Offset(0, 10),
-                      blurRadius: 4,
-                    ),
-                  ]
-                  : null,
+          boxShadow: isPinned
+              ? [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    offset: const Offset(0, 10),
+                    blurRadius: 4,
+                  ),
+                ]
+              : null,
         ),
         child: SafeArea(
           top: isPinned,

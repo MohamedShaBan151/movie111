@@ -11,7 +11,6 @@ class MovieSectionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return SizedBox(
       width: double.infinity,
       height: 641.h,
@@ -22,13 +21,12 @@ class MovieSectionView extends StatelessWidget {
             width: double.infinity,
             height: 641.h,
             fit: BoxFit.cover,
-            errorBuilder:
-                (_, __, ___) => Image.asset(
-                  AppAssets.failedImage,
-                  fit: BoxFit.fill,
-                  height: 641.h,
-                  width: double.infinity,
-                ),
+            errorBuilder: (_, __, ___) => Image.asset(
+              AppAssets.failedImage,
+              fit: BoxFit.fill,
+              height: 641.h,
+              width: double.infinity,
+            ),
           ),
           Container(
             width: double.infinity,
@@ -62,78 +60,20 @@ class MovieSectionView extends StatelessWidget {
                   movie.year == null
                       ? SizedBox()
                       : Text(
-                        (movie.year).toString(),
-                        style: TextStyle(
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.whiteGrey,
-                          fontFamily: 'Roboto',
+                          (movie.year).toString(),
+                          style: TextStyle(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.whiteGrey,
+                            fontFamily: 'Roboto',
+                          ),
                         ),
-                      ),
                   SizedBox(height: 16.h),
                 ],
               ),
             ),
           ),
         ],
-=======
-    return Container(
-      width: double.infinity,
-      height: 641.h,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(movie.largeCoverImage ?? ''))),
-      child: Container(
-        width: double.infinity,
-        height: 641.h,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [AppColors.black1.withAlpha(200), AppColors.black1],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [.8, 1])),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            children: [
-              SizedBox(
-                height: (248).h,
-              ),
-              Image.asset(
-                AppAssets.playerIcon,
-                width: 97.w,
-              ),
-              Spacer(),
-              Text(
-                movie.title ?? '',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.white,
-                    fontFamily: 'Roboto'),
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              movie.year == null
-                  ? SizedBox()
-                  : Text(
-                      (movie.year).toString(),
-                      style: TextStyle(
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.whiteGrey,
-                          fontFamily: 'Roboto'),
-                    ),
-              SizedBox(
-                height: 16.h,
-              ),
-            ],
-          ),
-        ),
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
       ),
     );
   }

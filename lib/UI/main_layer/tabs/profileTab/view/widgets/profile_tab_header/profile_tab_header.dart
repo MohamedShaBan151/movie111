@@ -65,11 +65,11 @@ class _ProfileTabHeaderState extends State<ProfileTabHeader> {
                         child: Text(
                           widget.profileData?.name != null
                               ? (widget.profileData?.name)!
-                                  .split(' ')
-                                  .take(2)
-                                  .join(' ')
-                                  .substring(0)
-                                  .toUpperCase()
+                                    .split(' ')
+                                    .take(2)
+                                    .join(' ')
+                                    .substring(0)
+                                    .toUpperCase()
                               : context.getLocalization().userName,
                           style: CustomTextStyles.style20w700.copyWith(
                             color: AppColors.white,
@@ -163,88 +163,79 @@ class _ProfileTabHeaderState extends State<ProfileTabHeader> {
                         showDialog(
                           context: context,
                           useSafeArea: true,
-                          builder:
-                              (context) => AlertDialog(
-                                title: Text(
-                                  context.getLocalization().exit,
-                                  style: CustomTextStyles.style36w500.copyWith(
-                                    color: AppColors.red,
-                                  ),
-                                ),
-                                backgroundColor: AppColors.white,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16),
-                                ),
-                                alignment: Alignment.center,
-                                actionsAlignment: MainAxisAlignment.center,
-                                content: Text(
-                                  context
-                                      .getLocalization()
-                                      .areYouSureYouWantToExit,
-                                  style: CustomTextStyles.style20w600.copyWith(
-                                    color: AppColors.black1,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                                icon: Icon(
-                                  Icons.exit_to_app_rounded,
-                                  color: AppColors.red,
-                                ),
-                                actions: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor: AppColors.yellow,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              16,
-                                            ),
-                                          ),
-                                        ),
-                                        child: Text(
-                                          context.getLocalization().no,
-                                          style: CustomTextStyles.style20w600
-                                              .copyWith(
-                                                color: AppColors.black1,
-                                              ),
-                                        ),
+                          builder: (context) => AlertDialog(
+                            title: Text(
+                              context.getLocalization().exit,
+                              style: CustomTextStyles.style36w500.copyWith(
+                                color: AppColors.red,
+                              ),
+                            ),
+                            backgroundColor: AppColors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            alignment: Alignment.center,
+                            actionsAlignment: MainAxisAlignment.center,
+                            content: Text(
+                              context.getLocalization().areYouSureYouWantToExit,
+                              style: CustomTextStyles.style20w600.copyWith(
+                                color: AppColors.black1,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            icon: Icon(
+                              Icons.exit_to_app_rounded,
+                              color: AppColors.red,
+                            ),
+                            actions: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: AppColors.yellow,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(16),
                                       ),
-                                      SizedBox(width: 20.w),
-                                      ElevatedButton(
-                                        onPressed: () async {
-                                          context.read<TokenProvider>().token =
-                                              null;
-                                          Navigator.pushNamedAndRemoveUntil(
-                                            context,
-                                            SignInScreen.routeName,
-                                            (route) => false,
-                                          );
-                                          currentIndex.value = 0;
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor: AppColors.red,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              16,
-                                            ),
-                                          ),
-                                        ),
-                                        child: Text(
-                                          context.getLocalization().yes,
-                                          style: CustomTextStyles.style20w600
-                                              .copyWith(color: AppColors.white),
-                                        ),
+                                    ),
+                                    child: Text(
+                                      context.getLocalization().no,
+                                      style: CustomTextStyles.style20w600
+                                          .copyWith(color: AppColors.black1),
+                                    ),
+                                  ),
+                                  SizedBox(width: 20.w),
+                                  ElevatedButton(
+                                    onPressed: () async {
+                                      context.read<TokenProvider>().token =
+                                          null;
+                                      Navigator.pushNamedAndRemoveUntil(
+                                        context,
+                                        SignInScreen.routeName,
+                                        (route) => false,
+                                      );
+                                      currentIndex.value = 0;
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: AppColors.red,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(16),
                                       ),
-                                    ],
+                                    ),
+                                    child: Text(
+                                      context.getLocalization().yes,
+                                      style: CustomTextStyles.style20w600
+                                          .copyWith(color: AppColors.white),
+                                    ),
                                   ),
                                 ],
                               ),
+                            ],
+                          ),
                         );
                       },
                       style: FilledButton.styleFrom(

@@ -47,18 +47,17 @@ class _CustomTextFormFieldAuthState extends State<CustomTextFormFieldAuth> {
           fillColor: AppColors.grey,
           filled: true,
           hintText: widget.hintText,
-          suffixIcon:
-              widget.password == true
-                  ? GestureDetector(
-                    onTap: () {
-                      isObscure = !isObscure;
-                      setState(() {});
-                    },
-                    child: Icon(
-                      isObscure ? Icons.visibility_off : Icons.visibility,
-                    ),
-                  )
-                  : null,
+          suffixIcon: widget.password == true
+              ? GestureDetector(
+                  onTap: () {
+                    isObscure = !isObscure;
+                    setState(() {});
+                  },
+                  child: Icon(
+                    isObscure ? Icons.visibility_off : Icons.visibility,
+                  ),
+                )
+              : null,
           prefixIcon: Padding(
             padding: EdgeInsets.all(10.r),
             child: SvgPicture.asset(

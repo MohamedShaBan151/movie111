@@ -90,11 +90,13 @@ class _SearchTabScreenState extends State<SearchTabScreen> {
                       );
                     } else if (state is SearchSuccess ||
                         state is GetMoreMoviesLoadingState) {
-                      final List<Movies> movies =
-                          context.watch<SearchMoviesCubit>().movies;
+                      final List<Movies> movies = context
+                          .watch<SearchMoviesCubit>()
+                          .movies;
                       return GridView.builder(
-                        controller:
-                            context.read<SearchMoviesCubit>().scrollController,
+                        controller: context
+                            .read<SearchMoviesCubit>()
+                            .scrollController,
                         itemCount:
                             movies.length +
                             (state is GetMoreMoviesLoadingState ? 1 : 0),

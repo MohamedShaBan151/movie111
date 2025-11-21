@@ -56,11 +56,7 @@ class Page4 extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-<<<<<<< HEAD
                     'Rate, Review, and Learn', 
-=======
-                    'Rate, Review, and Learn', //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     style: CustomTextStyles.style24w700.copyWith(
                       color: AppColors.white,
                     ),
@@ -68,11 +64,7 @@ class Page4 extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 16.r, bottom: 26.r),
                     child: Text(
-<<<<<<< HEAD
                       
-=======
-                      //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                       'Share your thoughts on the movies\nyou\'ve watched. Dive deep into film\ndetails and help others discover great\nmovies with your reviews.',
                       style: CustomTextStyles.style20w400.copyWith(
                         color: AppColors.white,
@@ -81,11 +73,7 @@ class Page4 extends StatelessWidget {
                     ),
                   ),
                   CustomElevatedButtonFilled(
-<<<<<<< HEAD
                     buttonText: 'Next', 
-=======
-                    buttonText: 'Next', //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     onPressed:
                         () => controller.nextPage(
                           duration: Duration(milliseconds: 500),
@@ -94,11 +82,7 @@ class Page4 extends StatelessWidget {
                   ),
                   SizedBox(height: 16.h),
                   CustomOutlinedButton(
-<<<<<<< HEAD
                     buttonText: 'Back', 
-=======
-                    buttonText: 'Back', //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     onPressed:
                         () => controller.previousPage(
                           duration: Duration(milliseconds: 500),

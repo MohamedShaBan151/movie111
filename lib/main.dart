@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,26 +11,10 @@ import 'package:movie111/UI/main_layer/main_layer_screen.dart';
 import 'package:movie111/UI/main_layer/provider/selected_cat_provider.dart';
 import 'package:movie111/UI/movieDetails/view/movie_details_screen.dart';
 import 'package:movie111/UI/onboarding/onboarding_screens/onboarding_screen_1.dart';
-=======
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movie111/UI/auth/providers/switch_provider.dart';
-import 'package:movie111/UI/auth/screens/resetPassword.dart';
-import 'package:movie111/UI/auth/screens/signInScreen.dart';
-import 'package:movie111/UI/auth/screens/signUpScreen.dart';
-import 'package:movie111/UI/main_layer/main_layer_screen.dart';
-import 'package:movie111/UI/main_layer/provider/selected_cat_provider.dart';
-import 'package:movie111/UI/movieDetails/view/movie_details_screen.dart';
-import 'package:movie111/UI/movieDetails/viewModel/favourite_cubit.dart';
-import 'package:movie111/UI/onboarding/onboarding_screens/onboarding_screen_1.dart';
-import 'package:movie111/UI/auth/providers/token_provider.dart';
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
 import 'package:movie111/core/utils/app_constants.dart';
 import 'package:movie111/core/utils/app_theme.dart';
 import 'package:movie111/generated/l10n.dart';
 import 'package:provider/provider.dart';
-<<<<<<< HEAD
 
 import 'UI/main_layer/tabs/profileTab/view/screens/resetPassword.dart';
 import 'UI/main_layer/tabs/profileTab/view/screens/update_profile_screen.dart';
@@ -52,20 +35,10 @@ Future<void> main() async {
   Hive.registerAdapter(CastAdapter());
   Hive.registerAdapter(TorrentsAdapter());
 
-=======
-import 'UI/main_layer/tabs/profileTab/screens/update_profile_screen.dart';
-import 'UI/onboarding/onboarding_screens/onboarding_screen_2.dart';
-import 'core/providers/avatar_bottom_sheet_provider.dart';
-import 'core/utils/app_prefs.dart';
-
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   await AppPrefs.init();
   runApp(
     MultiProvider(
       providers: [
-<<<<<<< HEAD
         ChangeNotifierProvider(create: (_) => SwitchProvider()),
         ChangeNotifierProvider(
           create: (context) => AvatarBottomSheetProvider(),
@@ -75,20 +48,6 @@ Future<void> main() async {
           create: (context) => TokenProvider()..loadToken(),
         ),
         ChangeNotifierProvider(create: (context) => ProfileTabProvider()),
-=======
-        ChangeNotifierProvider(
-          create: (_) => SwitchProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => AvatarBottomSheetProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => SelectedCatProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => TokenProvider()..loadToken(),
-        ),
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
       ],
       child: const MyApp(),
     ),
@@ -100,7 +59,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -111,69 +69,15 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         home: const Scaffold(body: Center(child: CircularProgressIndicator())),
         navigatorObservers: [routeObserver],
-=======
-    final tokenProvider = context.watch<TokenProvider>();
-    if (!tokenProvider.isTokenLoaded) {
-      return const MaterialApp(
-        home: Scaffold(
-          body: Center(child: CircularProgressIndicator()),
-        ),
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
       );
     }
     return ScreenUtilInit(
       designSize: Size(430, 932),
       minTextAdapt: true,
       splitScreenMode: true,
-<<<<<<< HEAD
-      builder:
-          (context, child) => MaterialApp(
-            debugShowCheckedModeBanner: false,
-            navigatorObservers: [routeObserver],
-            theme: AppTheme.themeData,
-            themeMode: ThemeMode.light,
-            localizationsDelegates: [
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            locale:
-                context.watch<SwitchProvider>().isActive == false
-                    ? Locale('en')
-                    : Locale('ar'),
-            supportedLocales: S.delegate.supportedLocales,
-            routes: {
-              SignInScreen.routeName: (_) => SignInScreen(),
-              OnboardingScreen1.routeName: (_) => OnboardingScreen1(),
-              OnboardingScreen2.routeName: (_) => OnboardingScreen2(),
-              UpdateProfileScreen.routeName: (_) => UpdateProfileScreen(),
-              MainLayerScreen.routeName: (_) => const MainLayerScreen(),
-              ResetPassword.routeName: (_) => ResetPassword(),
-              SignUpScreen.routeName: (_) => SignUpScreen(),
-              MovieDetailsScreen.routeName: (context) {
-                String movieId =
-                    ModalRoute.of(context)!.settings.arguments as String;
-
-                return MovieDetailsScreen(movieId: movieId);
-              },
-            },
-            initialRoute: getInitialRoute(tokenProvider),
-          ),
-    );
-  }
-
-  String getInitialRoute(TokenProvider tokenProvider) {
-    if (AppPrefs.onboardingGetBool(AppConstants.onboardingKey) == null) {
-      return OnboardingScreen1.routeName;
-    } else if (tokenProvider.token != null) {
-      return MainLayerScreen.routeName;
-    } else {
-      return SignInScreen.routeName;
-    }
-=======
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
+        navigatorObservers: [routeObserver],
         theme: AppTheme.themeData,
         themeMode: ThemeMode.light,
         localizationsDelegates: [
@@ -194,12 +98,16 @@ class MyApp extends StatelessWidget {
           MainLayerScreen.routeName: (_) => const MainLayerScreen(),
           ResetPassword.routeName: (_) => ResetPassword(),
           SignUpScreen.routeName: (_) => SignUpScreen(),
-          MovieDetailsScreen.routeName: (_) => MovieDetailsScreen(),
+          MovieDetailsScreen.routeName: (context) {
+            String movieId =
+                ModalRoute.of(context)!.settings.arguments as String;
+
+            return MovieDetailsScreen(movieId: movieId);
+          },
         },
         initialRoute: getInitialRoute(tokenProvider),
       ),
     );
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   }
 
   String getInitialRoute(TokenProvider tokenProvider) {

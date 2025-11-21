@@ -57,11 +57,7 @@ class Page3 extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-<<<<<<< HEAD
                     'Create Watch lists', 
-=======
-                    'Create Watch lists', //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     style: CustomTextStyles.style24w700.copyWith(
                       color: AppColors.white,
                     ),
@@ -69,11 +65,7 @@ class Page3 extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 8.r, bottom: 16.r),
                     child: Text(
-<<<<<<< HEAD
                       
-=======
-                      //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                       'Save movies to your watchlist to keep\ntrack of what you want to watch next.\nEnjoy films in various qualities and\ngenres.',
                       style: CustomTextStyles.style20w400.copyWith(
                         color: AppColors.white,
@@ -82,11 +74,7 @@ class Page3 extends StatelessWidget {
                     ),
                   ),
                   CustomElevatedButtonFilled(
-<<<<<<< HEAD
                     buttonText: 'Next', 
-=======
-                    buttonText: 'Next', //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     onPressed:
                         () => controller.nextPage(
                           duration: Duration(milliseconds: 500),
@@ -95,11 +83,7 @@ class Page3 extends StatelessWidget {
                   ),
                   SizedBox(height: 16.h),
                   CustomOutlinedButton(
-<<<<<<< HEAD
                     buttonText: 'Back', 
-=======
-                    buttonText: 'Back', //TODO:localization
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
                     onPressed:
                         () => controller.previousPage(
                           duration: Duration(milliseconds: 500),

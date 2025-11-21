@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -7,11 +6,6 @@ import '../../UI/movieDetails/model/movie_details_model.dart';
 class AppPrefs {
   static const String _historyBoxName = 'historyBox';
 
-=======
-import 'package:shared_preferences/shared_preferences.dart';
-
-class AppPrefs {
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
   static late SharedPreferences prefs;
 
   static Future<void> init() async {
@@ -35,7 +29,6 @@ class AppPrefs {
   static bool? localizationGetBool(String key) {
     return prefs.getBool(key);
   }
-<<<<<<< HEAD
 
 // history tab in profile tab screen (Hive)
   static MovieDetails _clone(MovieDetails m) => MovieDetails(
@@ -67,6 +60,4 @@ class AppPrefs {
     final box = await Hive.openBox<MovieDetails>(_historyBoxName);
     return box.values.toList();
   }
-=======
->>>>>>> 26fadd5efa8e9b4130b48e61d291de919d11e457
 }
