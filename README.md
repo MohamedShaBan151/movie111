@@ -1,6 +1,6 @@
 # 🎬 Movies App (Flutter)
 
-A Responsive Flutter-based movies application supporting **English and Arabic**, with login and register , onboarding, and rich movie browsing features.
+ movies application supporting **English and Arabic**, with login and register , onboarding, and rich movie browsing features.
 
 <p align="center">
   <img src="screenShots/cover.png" alt="cover" width="800" hspace="10" />
@@ -10,26 +10,7 @@ A Responsive Flutter-based movies application supporting **English and Arabic**,
 
 
 
-## 🚀 Features
 
-- 👋 Onboarding flow for new users
-- 🔐 login and register  
-- 🌍 English and Arabic language support 
-- 🏠 Bottom navigation with:
-  - Home
-  - Search
-  - Explore Categories
-  - Profile
-- 💾 Save movies to "Watch Later"
-- 📜 View watch history
-- 🔍 Search movies by name
-- 👤 View and edit user profile:
-  - Name, image, and phone number
-  - Change password
-  - Delete account
-- 🚪 Logout functionality
-
----
 ## 📸 Screenshots
 
 ### 🟦 Onboarding
@@ -97,5 +78,25 @@ A Responsive Flutter-based movies application supporting **English and Arabic**,
 - HTTP REST API
 - Flutter localization (`intl`)
 - Flutter ScreenUtil for responsiveness
+
+---
+## 🚀 Features
+
+- 👋 Onboarding flow for new users
+- 🔐 login and register  
+- 🌍 English and Arabic language support 
+- 🏠 Bottom navigation with:
+  - Home
+  - Search
+  - Explore Categories
+  - Profile
+- 💾 Save movies to "Watch Later"
+- 📜 View watch history
+- 🔍 Search movies by name
+- 👤 View and edit user profile:
+  - Name, image, and phone number
+  - Change password
+  - Delete account
+- 🚪 Logout functionality
 
 ---
